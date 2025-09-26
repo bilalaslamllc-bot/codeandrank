@@ -1,40 +1,170 @@
+<!DOCTYPE html>
 <html lang="en">
-<div class="qa-item">
-<button class="qa-q">Do you build eCommerce sites?</button>
-<div class="qa-a">Yes — we build eCommerce platforms with performance and SEO in mind.</div>
-</div>
-<div class="qa-item">
-<button class="qa-q">Can you work with existing teams?</button>
-<div class="qa-a">Absolutely. We integrate with internal teams or provide white-label support to agencies.</div>
-</div>
-<div class="qa-item">
-<button class="qa-q">What is your pricing model?</button>
-<div class="qa-a">SEO retainers typically range from $1,500 – $5,000/month for many SMBs. Web projects range $1,000 to $5,000 depending on scope.</div>
-</div>
-<div class="qa-item">
-<button class="qa-q">Where are you focused?</button>
-<div class="qa-a">Our target country is the USA; we serve local to international sized projects.</div>
-</div>
-</div>
-</section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeAndRank | SEO & Web Development Agency</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+  <style>
+    /* --- Basic Styling --- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a1a3f;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #081530;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #1da1f2;
+    }
 
+    /* --- Hero Section --- */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero img {
+      max-width: 600px;
+      width: 100%;
+      border-radius: 10px;
+    }
 
-</main>
+    /* --- Q&A Section --- */
+    .faq {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .faq-item {
+      background: #112a60;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .faq-item:hover {
+      background: #173b87;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 0.5rem;
+      color: #cfd8f3;
+    }
 
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #081530;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #1da1f2;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
 
-<a class="whatsapp-float" href="https://wa.me/923327721216" target="_blank" aria-label="WhatsApp">
-<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="white" d="M20.5 3.5c-4.6-4.6-12.1-4.6-16.7 0-3.9 3.9-4.6 9.8-2.2 14.2L1 23l5.1-1.4c4.4 2.4 10.3 1.7 14.2-2.2 4.6-4.6 4.6-12.1 0-16.7zM12 20c-3.6 0-6.9-1.3-9.5-3.9l-.7-.7 1.1-3.9L3 11.6c-1.8-2.6-2-5.8-.6-8.5C5.6 0.7 9.1 0 12 0c5 0 9.6 3 11.5 7.8 1.4 3.7.9 7.8-1.8 10.6C18.9 22.8 15.6 20 12 20z"/></svg>
-</a>
+    /* --- WhatsApp Floating Button --- */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background: #20b954;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="assets/images/codeandranklogo.svg" alt="CodeAndRank Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="seo.html">SEO Services</a>
+      <a href="webdev.html">Web Development</a>
+    </nav>
+  </header>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to CodeAndRank</h1>
+    <p>Your trusted partner for SEO and Web Development in the USA.</p>
+    <img src="assets/images/codeandrankheroimage.webp" alt="Hero Image">
+  </section>
 
-<footer class="site-footer">
-<div class="container footer-inner">
-<div>© <span id="year"></span> CodeAndRank</div>
-<div class="socials">Facebook • LinkedIn • X</div>
-</div>
-</footer>
+  <!-- FAQ Section -->
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <strong>Do you build eCommerce sites?</strong>
+      <div class="faq-answer">Yes — we build eCommerce platforms with performance and SEO in mind.</div>
+    </div>
+    <div class="faq-item">
+      <strong>Can you work with existing teams?</strong>
+      <div class="faq-answer">Absolutely. We integrate with internal teams or provide white-label support to agencies.</div>
+    </div>
+    <div class="faq-item">
+      <strong>What is your pricing model?</strong>
+      <div class="faq-answer">SEO retainers typically range from $1,500 – $5,000/month for SMBs. Web projects range $1,000 to $5,000 depending on scope.</div>
+    </div>
+    <div class="faq-item">
+      <strong>Where are you focused?</strong>
+      <div class="faq-answer">Our target country is the USA; we also serve international projects.</div>
+    </div>
+    <div class="faq-item">
+      <strong>Do you provide technical SEO?</strong>
+      <div class="faq-answer">Yes, our SEO team specializes in technical audits, white-label SEO, and enterprise solutions.</div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer>
+    <p>© CodeAndRank</p>
+    <p>
+      <a href="#">Facebook</a> • 
+      <a href="#">LinkedIn</a> • 
+      <a href="#">X</a>
+    </p>
+  </footer>
 
-<script src="assets/js/main.js"></script>
+  <!-- WhatsApp Button -->
+  <a class="whatsapp-btn" href="https://wa.me/923327721216" target="_blank">WhatsApp</a>
+
+  <script>
+    // FAQ Toggle
+    document.querySelectorAll(".faq-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const answer = item.querySelector(".faq-answer");
+        answer.style.display = (answer.style.display === "block") ? "none" : "block";
+      });
+    });
+  </script>
 </body>
 </html>
