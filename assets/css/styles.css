@@ -1,4 +1,4 @@
-/* ====== Global Styles ====== */
+/* ===== Global Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +7,9 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  background: #0a1a3f; /* dark blue */
   color: #fff;
-  background-color: #0a1a3f; /* Dark blue */
+  line-height: 1.6;
 }
 
 .container {
@@ -18,9 +18,9 @@ body {
   margin: 0 auto;
 }
 
-/* ====== Header ====== */
+/* ===== Header ===== */
 header {
-  background: #0d245c; /* Darker blue */
+  background: #0d245c;
   padding: 15px 0;
 }
 
@@ -31,26 +31,23 @@ header {
 }
 
 .logo {
-  height: 50px; /* Fixed small logo */
+  height: 50px;   /* fixes oversized logo */
   width: auto;
-  display: block;
 }
 
 .main-nav a {
   color: #fff;
   text-decoration: none;
-  margin: 0 15px;
+  margin-left: 20px;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
 .main-nav a:hover {
-  color: #00c6ff; /* Light blue hover */
+  color: #00c6ff;
 }
 
-/* ====== Hero Section ====== */
+/* ===== Hero ===== */
 .hero {
-  position: relative;
   width: 100%;
   height: 60vh;
   background: url('../images/codeandrankheroimage.webp') no-repeat center center/cover;
@@ -62,53 +59,39 @@ header {
 
 .hero h1 {
   font-size: 3rem;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 15px 20px;
-  border-radius: 8px;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  border-radius: 6px;
 }
 
-/* ====== Content Sections ====== */
+/* ===== Sections ===== */
 .section {
   padding: 60px 20px;
 }
 
 .section h2 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
   color: #00c6ff;
+  margin-bottom: 20px;
 }
 
-.section p {
-  max-width: 900px;
-  margin: 10px auto;
-  font-size: 1.1rem;
-}
-
-/* ====== FAQ Section ====== */
-.faq {
-  max-width: 900px;
-  margin: 40px auto;
-}
-
+/* ===== FAQ ===== */
 .faq-item {
-  margin-bottom: 10px;
   border: 1px solid #00c6ff;
-  border-radius: 8px;
+  border-radius: 6px;
+  margin: 10px 0;
   overflow: hidden;
-  transition: all 0.3s ease;
 }
 
 .faq-question {
   padding: 15px;
   background: #0d245c;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .faq-answer {
-  padding: 15px;
   display: none;
+  padding: 15px;
   background: #112b70;
 }
 
@@ -116,58 +99,32 @@ header {
   display: block;
 }
 
-/* ====== Footer ====== */
+/* ===== Footer ===== */
 footer {
   background: #0d245c;
   padding: 20px;
   text-align: center;
-  margin-top: 40px;
 }
 
 footer a {
   color: #00c6ff;
   margin: 0 10px;
-  text-decoration: none;
 }
 
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ====== WhatsApp Floating Button ====== */
+/* ===== WhatsApp Button ===== */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25d366;
   color: #fff;
-  font-size: 20px;
-  padding: 12px 16px;
+  padding: 12px 15px;
   border-radius: 50px;
+  font-size: 18px;
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .whatsapp-button:hover {
   background: #1ebe5c;
-}
-
-/* ====== Responsive ====== */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-    padding: 10px;
-  }
-
-  .main-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-nav a {
-    margin: 10px 0;
-  }
 }
