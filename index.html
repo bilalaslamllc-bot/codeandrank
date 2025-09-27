@@ -4,28 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeAndRank | SEO & Web Development Agency</title>
-  <style>
-    body {margin:0;font-family:Arial,sans-serif;background:#0a1a3f;color:#fff;line-height:1.6;}
-    header {display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#081530;}
-    header img {height:50px;}
-    nav a {color:#fff;text-decoration:none;margin:0 1rem;font-weight:bold;}
-    nav a:hover {color:#1da1f2;}
-    .hero {text-align:center;padding:3rem 1rem;}
-    .hero img {max-width:600px;width:100%;border-radius:10px;}
-    .faq {max-width:800px;margin:3rem auto;padding:0 1rem;}
-    .faq-item {background:#112a60;margin-bottom:1rem;padding:1rem;border-radius:8px;cursor:pointer;}
-    .faq-item:hover {background:#173b87;}
-    .faq-answer {display:none;margin-top:.5rem;color:#cfd8f3;}
-    footer {text-align:center;padding:2rem 1rem;background:#081530;margin-top:3rem;}
-    footer a {color:#1da1f2;margin:0 .5rem;text-decoration:none;}
-    .whatsapp-btn {position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:12px 18px;
-      border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 4px 6px rgba(0,0,0,0.3);}
-    .whatsapp-btn:hover {background:#20b954;}
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="assets/images/codeandranklogo.svg" alt="CodeAndRank Logo">
+    <img src="assets/images/codeandranklogo.svg" alt="CodeAndRank Logo" class="logo">
     <nav>
       <a href="index.html">Home</a>
       <a href="seo.html">SEO Services</a>
@@ -54,11 +38,5 @@
   </footer>
 
   <a class="whatsapp-btn" href="https://wa.me/923327721216" target="_blank">WhatsApp</a>
-
-  <script>
-    document.querySelectorAll(".faq-item").forEach(item=>{
-      item.addEventListener("click",()=>{const ans=item.querySelector(".faq-answer");ans.style.display=(ans.style.display==="block")?"none":"block";});
-    });
-  </script>
 </body>
 </html>
