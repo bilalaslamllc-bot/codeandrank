@@ -46,6 +46,13 @@ img{max-width:100%;height:auto;display:block}
 .nav a{color:var(--white);font-weight:600}
 .nav a.active{color:var(--accent)}
 .mobile-menu{display:none;background:transparent;border:0;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+/* Logo sizing fix */
+.brand img,
+.logo img {
+  max-height: 44px;  /* controls logo height */
+  width: auto;       /* keeps aspect ratio */
+}
+
 
 /* When mobile menu open: show vertical nav */
 .nav.open{
@@ -116,3 +123,4 @@ section.container.section-card{background:var(--card);border-radius:10px;padding
   .container p{font-size:0.95rem}
   .mobile-menu{font-size:20px}
 }
+
