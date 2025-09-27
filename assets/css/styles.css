@@ -47,7 +47,6 @@ a {
   padding: 1rem 0;
 }
 
-/* ====== Header Logo Fix ====== */
 .logo {
   height: 50px;     /* keeps logo small */
   width: auto;      /* maintain aspect ratio */
@@ -226,4 +225,5 @@ p {
     margin: 0.5rem;
   }
 }
+
 
