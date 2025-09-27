@@ -1,243 +1,118 @@
-/* ===========================
-   Global Styles
-=========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* assets/css/styles.css - full replacement for consistent responsive layout */
+
+/* ------ Variables ------ */
+:root{
+  --bg: #071a3a;     /* page background */
+  --card: rgba(255,255,255,0.04);
+  --accent: #0b74ff;
+  --muted: #bcd3ee;
+  --white: #ffffff;
+  --container: 1200px;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f7fa;
-  color: #333;
+/* ------ Base ------ */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background:var(--bg);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+
+/* ------ Layout Container ------ */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:28px 20px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* ------ Header / Nav ------ */
+.site-header{
+  background: rgba(7,26,58,0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--container);margin:0 auto;padding:14px 20px;}
+.brand .logo{height:44px;display:block}
+.nav{display:flex;align-items:center;gap:18px}
+.nav ul{display:flex;gap:18px;align-items:center;padding:0;margin:0}
+.nav a{color:var(--white);font-weight:600}
+.nav a.active{color:var(--accent)}
+.mobile-menu{display:none;background:transparent;border:0;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+/* When mobile menu open: show vertical nav */
+.nav.open{
+  display:block;
+}
+.nav.open ul{flex-direction:column;gap:12px;padding:12px 18px;background:rgba(7,26,58,0.99);border-radius:8px;}
+
+/* ------ Hero ------ */
+.hero{padding:36px 0}
+.hero-inner{display:flex;gap:28px;align-items:center;justify-content:space-between}
+.hero-copy{flex:1}
+.hero-copy h1{font-size:2rem;margin:0 0 10px}
+.lead{color:var(--muted);font-size:1.03rem;margin-bottom:14px}
+.hero-image{flex:1;display:flex;justify-content:center}
+
+/* make images and CTAs consistent */
+.btn, .cta{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--accent);color:var(--white);text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+/* ------ Content Sections ------ */
+section.container.section-card{background:var(--card);border-radius:10px;padding:20px;margin-top:18px}
+.container h2{font-size:1.5rem;color:var(--white);display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.container p{color:var(--muted);font-size:1rem;margin-bottom:12px;line-height:1.6}
+
+/* small icon styling if used inline SVG or icon class */
+.section-icon{width:24px;height:24px;display:inline-block;flex-shrink:0}
+
+/* ------ FAQ / Q&A ------ */
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.faq-item{background:rgba(255,255,255,0.03);padding:14px;border-radius:10px;cursor:pointer;transition:transform .15s ease}
+.faq-item:hover{transform:translateY(-6px)}
+.faq-item .question{font-weight:700}
+.faq-item .answer{max-height:0;overflow:hidden;opacity:0;transition:all .25s ease;margin-top:8px;color:var(--muted)}
+.faq-item.open .answer{max-height:900px;opacity:1}
+
+/* ------ Footer ------ */
+.site-footer{border-top:1px solid rgba(255,255,255,0.04);padding:18px 0;margin-top:36px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:var(--container);margin:0 auto;padding:0 20px}
+.footer-logo{height:36px}
+
+/* whatsapp float */
+.whatsapp-float{position:fixed;right:18px;bottom:18px;background:linear-gradient(180deg,#25D366,#1DA851);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.25);text-decoration:none}
+.whatsapp-float svg, .whatsapp-float {color:var(--white);font-size:22px}
+
+/* ------ Responsive Breakpoints ------ */
+@media (max-width: 1024px){
+  .hero-copy h1{font-size:1.7rem}
+  .hero-image{display:none} /* optional: hide hero image on tablets for tighter layout */
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+@media (max-width: 900px){
+  .header-inner{padding:10px 16px}
+  .nav{display:none}
+  .mobile-menu{display:block}
+  .hero-inner{flex-direction:column;align-items:stretch}
+  .hero-copy{text-align:center}
+  .btn, .cta{width:100%;display:block;text-align:center}
+  .container{padding:18px 14px}
+  .footer-inner{flex-direction:column;align-items:center;text-align:center}
+  .footer-inner .foot-right{margin-top:12px}
+  .faq-grid{grid-template-columns:1fr}
 }
 
-/* ===========================
-   Header
-=========================== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: #0a1a3c; /* Dark Blue */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header .logo img {
-  max-height: 60px;
-  width: auto;
-  display: block;
-}
-
-header nav ul {
-  display: flex;
-  list-style: none;
-}
-
-header nav ul li {
-  margin-left: 20px;
-}
-
-header nav ul li a {
-  color: #fff;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-  color: #00c3ff; /* Accent Blue */
-}
-
-/* ===========================
-   Hero Section
-=========================== */
-.hero {
-  background: url('../images/codeandrankheroimage.webp') no-repeat center center/cover;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 700px;
-}
-
-.hero .btn {
-  padding: 12px 30px;
-  background: #00c3ff;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: background 0.3s ease;
-}
-
-.hero .btn:hover {
-  background: #009bd1;
-}
-
-/* ===========================
-   Service Containers
-=========================== */
-.section {
-  padding: 60px 20px;
-  background-color: #fff;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #0a1a3c;
-}
-
-.section img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin: 20px 0;
-}
-
-.section p {
-  margin-bottom: 15px;
-  font-size: 1.05rem;
-}
-
-/* ===========================
-   Q&A Section
-=========================== */
-.qa-section {
-  margin: 40px 0;
-}
-
-.qa-item {
-  background: #f0f4f9;
-  margin-bottom: 15px;
-  padding: 15px 20px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-  cursor: pointer;
-}
-
-.qa-item:hover {
-  background: #e2ecf5;
-}
-
-.qa-question {
-  font-weight: bold;
-  color: #0a1a3c;
-}
-
-.qa-answer {
-  display: none;
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.qa-item:hover .qa-answer {
-  display: block;
-}
-
-/* ===========================
-   Footer
-=========================== */
-footer {
-  background: #0a1a3c;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 50px;
-}
-
-footer a {
-  color: #00c3ff;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #fff;
-}
-
-/* ===========================
-   Floating WhatsApp Button
-=========================== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 24px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background: #20b954;
-}
-
-/* ===========================
-   Responsive (Mobile)
-=========================== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  header nav ul li {
-    margin: 10px 0;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .section {
-    padding: 40px 15px;
-  }
+@media (max-width:480px){
+  .hero-copy h1{font-size:1.4rem}
+  .lead{font-size:0.95rem}
+  .container h2{font-size:1.2rem}
+  .container p{font-size:0.95rem}
+  .mobile-menu{font-size:20px}
 }
