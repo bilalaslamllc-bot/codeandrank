@@ -1,184 +1,118 @@
-/* General Styles */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background: #0a1a3f; }
-a { color: #00c2ff; text-decoration: none; }
-ul { list-style: none; }
+/* assets/css/styles.css - full replacement for consistent responsive layout */
 
-/* Header */
-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #0d1b4c; }
-header .logo img { height: 50px; }
-nav ul { display: flex; gap: 1.5rem; }
-nav a { color: #fff; font-weight: bold; }
-nav a.active { border-bottom: 2px solid #00c2ff; }
-
-/* Hero Section */
-.hero { position: relative; text-align: center; color: white; }
-.hero img { width: 100%; height: auto; }
-.hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.hero-text h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-.hero-text .btn { display: inline-block; padding: 0.7rem 1.5rem; margin: 0.5rem; background: #00c2ff; color: #fff; border-radius: 5px; }
-.hero.small-hero img { height: 300px; object-fit: cover; }
-
-/* Sections */
-section { padding: 2rem; }
-section h2 { margin-bottom: 1rem; color: #00c2ff; }
-section p, li { margin-bottom: 1rem; }
-
-/* FAQ */
-.faq { margin-bottom: 1rem; background: #13285c; padding: 1rem; border-radius: 5px; }
-.faq h3 { color: #00c2ff; }
-
-/* Footer */
-footer { text-align: center; padding: 1rem; background: #0d1b4c; margin-top: 2rem; }
-footer .social { display: flex; justify-content: center; gap: 1rem; }
-
-/* WhatsApp Floating Button */
-.whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 15px; border-radius: 50%; font-size: 24px; }
-/* Base container styling */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  line-height: 1.6;
+/* ------ Variables ------ */
+:root{
+  --bg: #071a3a;     /* page background */
+  --card: rgba(255,255,255,0.04);
+  --accent: #0b74ff;
+  --muted: #bcd3ee;
+  --white: #ffffff;
+  --container: 1200px;
 }
 
-.container h2 {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
+/* ------ Base ------ */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background:var(--bg);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+
+/* ------ Layout Container ------ */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:28px 20px;
 }
 
-.container p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+/* ------ Header / Nav ------ */
+.site-header{
+  background: rgba(7,26,58,0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--container);margin:0 auto;padding:14px 20px;}
+.brand .logo{height:44px;display:block}
+.nav{display:flex;align-items:center;gap:18px}
+.nav ul{display:flex;gap:18px;align-items:center;padding:0;margin:0}
+.nav a{color:var(--white);font-weight:600}
+.nav a.active{color:var(--accent)}
+.mobile-menu{display:none;background:transparent;border:0;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+/* When mobile menu open: show vertical nav */
+.nav.open{
+  display:block;
+}
+.nav.open ul{flex-direction:column;gap:12px;padding:12px 18px;background:rgba(7,26,58,0.99);border-radius:8px;}
+
+/* ------ Hero ------ */
+.hero{padding:36px 0}
+.hero-inner{display:flex;gap:28px;align-items:center;justify-content:space-between}
+.hero-copy{flex:1}
+.hero-copy h1{font-size:2rem;margin:0 0 10px}
+.lead{color:var(--muted);font-size:1.03rem;margin-bottom:14px}
+.hero-image{flex:1;display:flex;justify-content:center}
+
+/* make images and CTAs consistent */
+.btn, .cta{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--accent);color:var(--white);text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+/* ------ Content Sections ------ */
+section.container.section-card{background:var(--card);border-radius:10px;padding:20px;margin-top:18px}
+.container h2{font-size:1.5rem;color:var(--white);display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.container p{color:var(--muted);font-size:1rem;margin-bottom:12px;line-height:1.6}
+
+/* small icon styling if used inline SVG or icon class */
+.section-icon{width:24px;height:24px;display:inline-block;flex-shrink:0}
+
+/* ------ FAQ / Q&A ------ */
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.faq-item{background:rgba(255,255,255,0.03);padding:14px;border-radius:10px;cursor:pointer;transition:transform .15s ease}
+.faq-item:hover{transform:translateY(-6px)}
+.faq-item .question{font-weight:700}
+.faq-item .answer{max-height:0;overflow:hidden;opacity:0;transition:all .25s ease;margin-top:8px;color:var(--muted)}
+.faq-item.open .answer{max-height:900px;opacity:1}
+
+/* ------ Footer ------ */
+.site-footer{border-top:1px solid rgba(255,255,255,0.04);padding:18px 0;margin-top:36px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:var(--container);margin:0 auto;padding:0 20px}
+.footer-logo{height:36px}
+
+/* whatsapp float */
+.whatsapp-float{position:fixed;right:18px;bottom:18px;background:linear-gradient(180deg,#25D366,#1DA851);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.25);text-decoration:none}
+.whatsapp-float svg, .whatsapp-float {color:var(--white);font-size:22px}
+
+/* ------ Responsive Breakpoints ------ */
+@media (max-width: 1024px){
+  .hero-copy h1{font-size:1.7rem}
+  .hero-image{display:none} /* optional: hide hero image on tablets for tighter layout */
 }
 
-/* Hero section fixes */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  padding: 3rem 1.5rem;
+@media (max-width: 900px){
+  .header-inner{padding:10px 16px}
+  .nav{display:none}
+  .mobile-menu{display:block}
+  .hero-inner{flex-direction:column;align-items:stretch}
+  .hero-copy{text-align:center}
+  .btn, .cta{width:100%;display:block;text-align:center}
+  .container{padding:18px 14px}
+  .footer-inner{flex-direction:column;align-items:center;text-align:center}
+  .footer-inner .foot-right{margin-top:12px}
+  .faq-grid{grid-template-columns:1fr}
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+@media (max-width:480px){
+  .hero-copy h1{font-size:1.4rem}
+  .lead{font-size:0.95rem}
+  .container h2{font-size:1.2rem}
+  .container p{font-size:0.95rem}
+  .mobile-menu{font-size:20px}
 }
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-/* Call to action button */
-.cta {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: #0056b3;
-  color: #fff;
-  border-radius: 6px;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  text-align: center;
-}
-
-.cta:hover {
-  background: #003d80;
-}
-
-/* Q&A section */
-.qna .qna-item {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
-}
-
-.qna .question {
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-}
-
-.qna .answer {
-  display: none;
-  font-size: 0.95rem;
-}
-
-/* Footer fix */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
-
-/* ✅ Mobile adjustments */
-@media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
-  .container h2 {
-    font-size: 1.4rem;
-    line-height: 1.3;
-  }
-
-  .container p {
-    font-size: 0.95rem;
-  }
-
-  .hero {
-    padding: 2rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .cta {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
-  .cta {
-    font-size: 0.9rem;
-    padding: 0.9rem;
-  }
-}
-
