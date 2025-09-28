@@ -205,3 +205,33 @@ section.container.section-card{background:var(--card);border-radius:10px;padding
     display: block;
   }
 }
+/* Service Containers */
+.service-container {
+  text-align: center;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.service-icon {
+  width: 120px;   /* big image like picture */
+  height: auto;
+  margin-bottom: 1rem;
+}
+.service-container h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.service-container p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
