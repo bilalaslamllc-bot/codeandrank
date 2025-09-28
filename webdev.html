@@ -8,90 +8,31 @@
   <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  /* Modern Header */
-.site-header {
-  background: var(--bg);
-  padding: 0.8rem 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
+ <header class="site-header">
+  <div class="container header-container">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="assets/images/codeandranklogo.svg" 
+           alt="CodeAndRank Logo"
+           srcset="assets/images/codeandranklogo.svg 1x, assets/images/codeandranklogo.svg 2x">
+    </a>
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="seo.html">SEO Services</a></li>
+        <li><a href="webdev.html" class="active">Web Development</a></li>
+      </ul>
+    </nav>
 
-.logo img {
-  height: 50px;
-  width: auto;
-}
+    <!-- Mobile Menu Toggle -->
+    <button class="nav-toggle" aria-label="Toggle Menu">
+      <span class="hamburger"></span>
+    </button>
+  </div>
+</header>
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--accent);
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    flex-direction: column;
-    background: var(--bg);
-    width: 220px;
-    padding: 1rem;
-    gap: 1rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-}
 
 
   <section class="hero">
@@ -141,6 +82,7 @@
   <a href="https://wa.me/923327721216" class="whatsapp-float">💬</a>
 </body>
 </html>
+
 
 
 
